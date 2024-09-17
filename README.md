@@ -33,8 +33,8 @@ Make sure you use node version `v20.8.0`
 After confirming that your environment meets the above [requirements](#💼-requirements), you can start this project by following the steps mentioned below:
 
 ```bash
-git clone https://github.com/tailh1998/nodejs-ecommerce-api-typescript.git
-cd nodejs-ecommerce-api-typescript/system
+git https://github.com/tailh1998/nodejs-ecommerce-api-typescript.git
+cd  nodejs-ecommerce-api-typescript
 ```
 
 When that's done, install the project dependencies. It is recommended that you use [Yarn](https://yarnpkg.com/) for deterministic dependency management, but `npm install` will suffice.
