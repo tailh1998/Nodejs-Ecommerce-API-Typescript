@@ -1,0 +1,12 @@
+{
+    "verbose": true,
+    "watch": [
+        "src"
+    ],
+    "ext": "ts",
+    "exec": "babel-node -x .ts -- ./src/index.ts",
+    "env": {
+        "PORT": "8017",
+        "LHT_DB_HOST": "localhost"
+    }
+}
