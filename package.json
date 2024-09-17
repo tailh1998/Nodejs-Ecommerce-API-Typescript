@@ -1,9 +1,9 @@
 {
-  "name": "trello",
+  "name": "nodejs-ecommerce-api-typescript",
   "private": true,
   "version": "2.0.0",
   "license": "MIT",
-  "description": "https://github.com/tailh1998/trello-api-v2",
+  "description": "https://github.com/tailh1998/nodejs-ecommerce-api-typescript",
   "author": "tailh1998 <taile06121998@gmail.com>",
   "engines": {
     "node": "20.8.0",
