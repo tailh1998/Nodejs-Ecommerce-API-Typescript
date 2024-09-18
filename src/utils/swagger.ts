@@ -8,10 +8,10 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "TRELLO API SWAGGER",
+      title: "Nodejs E-Commerce API Typescript SWAGGER",
       version: process.env.npm_package_version ?? "0.0.1",
       description:
-        "This is a simple CRUD TRELLO API application made with Express and documented with Swagger",
+        "This is a Nodejs E-Commerce application made with Express and documented with Swagger",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html"
