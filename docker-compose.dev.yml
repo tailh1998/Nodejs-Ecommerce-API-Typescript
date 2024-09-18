@@ -1,1 +1,41 @@
-# i will config later
+version: '3.8'
+
+services:
+  app:
+    container_name: nodejs-ecommerce-api
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8017:8017"  
+    environment:
+      - NODE_ENV=development
+      - PORT=8017
+      - HOST=0.0.0.0 # Ensure the server is accessible from outside the container ( dev enviroment)
+      - MONGODB_URI=${MONGODB_URI} 
+      - REDIS_URI=${REDIS_URI}     
+      - APP_NAME=${APP_NAME}
+      - APP_EMAIL=${APP_EMAIL}
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+      - AWS_BUCKET_ACCESS_KEY=${AWS_BUCKET_ACCESS_KEY}
+      - AWS_BUCKET_SECRET_KEY=${AWS_BUCKET_SECRET_KEY}
+      - AWS_CLOUD_FRONT=${AWS_CLOUD_FRONT}
+      - AWS_CLOUD_FRONT_PUBLIC_KEY=${AWS_CLOUD_FRONT_PUBLIC_KEY}
+      - AWS_CLOUD_FRONT_PRIVATE_KEY=${AWS_CLOUD_FRONT_PRIVATE_KEY}
+      - AWS_EMAIL_HOST=${AWS_EMAIL_HOST}
+      - AWS_EMAIL_PORT=${AWS_EMAIL_PORT}
+      - AWS_EMAIL_USER=${AWS_EMAIL_USER}
+      - AWS_EMAIL_PASSWORD=${AWS_EMAIL_PASSWORD}
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - DISCORD_CHANNEL_ID=${DISCORD_CHANNEL_ID}
+    command: yarn start
+
+volumes:
+  node_modules:

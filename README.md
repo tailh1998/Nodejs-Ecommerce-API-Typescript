@@ -32,21 +32,30 @@ Make sure you use node version `v20.8.0`
 
 After confirming that your environment meets the above [requirements](#💼-requirements), you can start this project by following the steps mentioned below:
 
+### Clone the Repository
+
 ```bash
 git https://github.com/tailh1998/nodejs-ecommerce-api-typescript.git
 cd  nodejs-ecommerce-api-typescript
 ```
 
+### Set Up Environment Variables
+
+```bash
+NODE_ENV=development
+PORT=8017
+HOST=0.0.0.0
+MONGODB_URI=mongodb+srv://...
+REDIS_URI=redis://...
+# Other environment variables...
+```
+
+### Install packages
+
 When that's done, install the project dependencies. It is recommended that you use [Yarn](https://yarnpkg.com/) for deterministic dependency management, but `npm install` will suffice.
 
 ```bash
 yarn # or `yarn install` to install project dependencies
-```
-
-Since the project relies on a lot of environment variables, one needs to create a copy of the `.env.example` file and save as .env in the root directory:
-
-```bash
-copy .env.example .env
 ```
 
 ## ▶️ Running the Project
@@ -55,16 +64,23 @@ copy .env.example .env
 
 # For development environment
 
-$ yarn start # Build the client bundles and start the webpack dev server
+$ yarn start # Build the client bundles and start dev server
 
 ```
 
 While developing, you will probably rely mostly on `yarn start`; however, there are additional scripts at your disposal:
 
-| `yarn <script>` | Description                                                          |
-| --------------- | -------------------------------------------------------------------- |
-| `yarn start`    | Starts the app at `localhost:8017` by default                        |
-| `yarn build`    | Builds the app in production mode and serves files from build folder |
+| `yarn <script>` | Description                                                                   |
+| --------------- | ----------------------------------------------------------------------------- |
+| `yarn start`    | Starts the app at `http://localhost:8017/v1/api/health-check` by default      |
+| `yarn build`    | Builds the app in production mode and serves files from build folder          |
+
+## ▶️ Running the Project with Docker
+
+```bash
+# For development environment
+docker-compose -f docker-compose.dev.yml up --build # Build the docker container and start dev server
+```
 
 ## ✏️ Project Structure
 

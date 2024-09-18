@@ -18,25 +18,6 @@ import inventory from "~/routes/v1/inventory"
 import { push2LogDiscord } from "~/middleware/discord-log.middleware"
 const router = express.Router()
 
-router.use(push2LogDiscord)
-
-// Comment apiKey n permission middleware  when u want to test email service
-router.use(apiKey)
-router.use(permission("0000"))
-
-router.use("/auth", access)
-router.use("/email", email)
-router.use("/user", user)
-router.use("/products", product)
-router.use("/discounts", discount)
-router.use("/checkout", checkout)
-router.use("/inventory", inventory)
-router.use("/cart", cart)
-router.use("/comment", comment)
-router.use("/upload", upload)
-router.use("/rbac", rbac)
-router.use("/profile", profile)
-
 /**
  * @openapi
  * /v1/api/health-check:
@@ -56,5 +37,24 @@ router.get("/health-check", (_, res) => {
     }
   }).send(res)
 })
+
+router.use(push2LogDiscord)
+
+// Comment apiKey n permission middleware  when u want to test email service
+router.use(apiKey)
+router.use(permission("0000"))
+
+router.use("/auth", access)
+router.use("/email", email)
+router.use("/user", user)
+router.use("/products", product)
+router.use("/discounts", discount)
+router.use("/checkout", checkout)
+router.use("/inventory", inventory)
+router.use("/cart", cart)
+router.use("/comment", comment)
+router.use("/upload", upload)
+router.use("/rbac", rbac)
+router.use("/profile", profile)
 
 export default router

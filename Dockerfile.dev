@@ -1,1 +1,15 @@
-# i will config later
+FROM node:20.8.0
+
+WORKDIR /usr/src/app
+
+COPY package.json yarn.lock ./
+
+RUN yarn install
+
+COPY . .
+
+RUN yarn global add typescript
+
+EXPOSE 8017
+
+CMD ["yarn", "dev"]
