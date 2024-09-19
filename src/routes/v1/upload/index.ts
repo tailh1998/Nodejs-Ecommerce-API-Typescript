@@ -15,7 +15,7 @@ uploadRouter.post("/", diskStorage.single("file"), asyncHandler(UploadController
 uploadRouter.post(
   "/multiple",
   diskStorage.array("files", 10),
-  UploadController.uploadMultipleImages
+  asyncHandler(UploadController.uploadMultipleImages)
 )
 
 // z: ------------- [ S3 ] -------------
