@@ -12,6 +12,7 @@ import { ENVIRONMENT } from "~/constants"
 import { checkOverload } from "~/helpers/check.connect"
 import errorHandler from "~/middleware/error.middleware"
 import logRequest from "./middleware/log.middleware"
+import rateLimiter from "./middleware/rate-limit.middleware"
 import MONGO_DB from "~/configs/database.config"
 import WELCOME from "~/routes"
 import ROUTER_V1 from "~/routes/v1"
@@ -27,6 +28,7 @@ const START_SERVER = (env: string) => {
 
   // z: ------------- MIDDLEWARES ------------- //
   env === ENVIRONMENT.PRODUCTION && app.disable("x-powered-by")
+  app.use(rateLimiter);
   app.use(logRequest)
   app.use(morgan("dev"))
   app.use(helmet())
