@@ -167,12 +167,12 @@ docker-compose -f docker-compose.dev.yml up --build # Build the docker container
 └── yarn.lock                               # Yarn lock file for locking the dependency versions
 ```
 
-## 🐞 Code Review Process
+<!-- ## 🐞 Code Review Process
 
 - Make sure your code pass ESLint
 - Resolve conflicts (if any)
 - Create a Pull Request (Merge Request), and comment the link to `<xx>-pr` channel with the following syntax: `[MR name] [Link] [Reviewers]`. Tag at least **2 members** to review your MR
-- After the MR has at least **2 approvals**, the **last person** who approves will merge, and **comment "Merged"** to the thread.
+- After the MR has at least **2 approvals**, the **last person** who approves will merge, and **comment "Merged"** to the thread. -->
 
 ## 🚚 Building for Production
 
